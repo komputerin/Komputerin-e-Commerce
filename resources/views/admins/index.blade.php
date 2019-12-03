@@ -93,4 +93,4 @@
       </div>
 
       @include('/admins/partials/footer')
-      @section ('container')
+      @endsection ('container')
