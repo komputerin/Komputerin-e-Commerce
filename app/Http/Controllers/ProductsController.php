@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Product;
 
 class ProductsController extends Controller
 {
@@ -13,8 +15,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-
-        return view('admins/list-product');
+        $products = Product::all();
+        return view('admins/products/list-product', compact('products'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('admins/add-product');
+        return view('admins/products/add-product');
     }
 
     /**
@@ -35,7 +37,17 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kategori' => 'required',
+            'nama' => 'required',
+            'harga' => 'required',
+            'spesifikasi' => 'required',
+            'stok' => 'required',
+            'image' => 'required'
+        ]);
+
+        Product::create($request->all());
+        return redirect('/list-product')->with('status', 'Berhasil Ditambahkan!');
     }
 
     /**
@@ -44,9 +56,10 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view('admins/products/show', compact('product'));
+        
     }
 
     /**
@@ -57,7 +70,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admins/products/edit', ['product' => $product]);
     }
 
     /**
@@ -69,7 +82,25 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    //     {
+    //         $request->validate([
+    //             'nama' => 'required',
+    //             'harga' => 'required|size:9',
+    //             'spesifikasi' => 'required',
+    //             'stok' => 'required'
+    //             'image' => 'required'
+    //         ]);
+    
+    //         Student::where('id', $product->id)
+    //             ->update([
+    //                 'nama' => $request->nama,
+    //                 'harga' => $request->harga,
+    //                 'spesifikasi' => $request->spesifikasi,
+    //                 'stok' => $request->stok
+    //                 'image' => $request->image
+    //             ]);
+    //             return redirect('/admins')->with('status', 'Berhasil Di Tambah!');
+    //     }
     }
 
     /**
@@ -82,4 +113,15 @@ class ProductsController extends Controller
     {
         //
     }
+
+    // private function storeImage($product)
+    // {
+    //     if (request()->has('image')) {
+    //         $product->update([
+    //             'image' => request()->image->store('uploads', 'public'),
+    //         ]);
+    //         $image = Image::make(public_path('storage/' . $product->image))->fit(300, 300, null, 'top-left');
+    //         $image->save();
+    //     }
+    // }
 }

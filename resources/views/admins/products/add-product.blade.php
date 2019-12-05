@@ -6,8 +6,14 @@
 <div class="card mb-3">
         <div class="card-header">
         <h2 class="mt-3">Tambah Produk</h2>
-        <form method="post" action="/students">
+        <form method="post" action="/add-product">
         @csrf
+            <div class="form-group">
+                <label for="nama">Kategori</label>
+                <input type="text" class="form-control @error('kategori') is-invalid @enderror" id="kategori" placeholder="Masukan Kategori" name="kategori" value="{{ old('kategori') }}">
+                @error('kategori')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </div>
+
             <div class="form-group">
                 <label for="nama">Nama Produk</label>
                 <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" placeholder="Masukan Nama" name="nama" value="{{ old('nama') }}">
@@ -16,8 +22,8 @@
 
             <div class="form-group">
                 <label for="nrp">Harga</label>
-                <input type="text" class="form-control @error('harga') is-invalid @enderror" id="nrp" placeholder="Masukan Harga" name="nrp" value="{{ old('harga') }}">
-                @error('nrp')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                <input type="text" class="form-control @error('harga') is-invalid @enderror" id="harga" placeholder="Masukan Harga" name="harga" value="{{ old('harga') }}">
+                @error('harga')<div class="invalid-feedback">{{ $message }}</div>@enderror
             </div>
 
             <div class="form-group">
@@ -34,11 +40,12 @@
 
             <div class="form-group">
                 <label for="image"></label>
-                <input type="file" name="image">
-                <label for="image"></label>
-                <input type="file" name="image">
-                <label for="image"></label>
-                <input type="file" name="image">
+                <input type="file" name="image" class=" @error('image') is-invalid @enderror" id="image" placeholder="Upload Gambar" name="image" value="{{ old('image') }}">
+                @error('image')><div class="invalid-feedback">{{ $message }}</div>@enderror
+                <input type="file" name="image" class=" @error('image') is-invalid @enderror" id="image" placeholder="Upload Gambar" name="image" value="{{ old('image') }}">
+                @error('image')><div class="invalid-feedback">{{ $message }}</div>@enderror
+                <input type="file" name="image" class=" @error('image') is-invalid @enderror" id="image" placeholder="Upload Gambar" name="image" value="{{ old('image') }}">
+                @error('image')><div class="invalid-feedback">{{ $message }}</div>@enderror
             </div>
 
             <button type="submit" class="btn btn-primary">Tambah Produk</button>

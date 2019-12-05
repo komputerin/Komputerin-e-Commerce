@@ -18,6 +18,11 @@ Route::get('register', 'AdminsController@register');
 Route::get('forgot-password', 'AdminsController@forgotpass');
 Route::get('list-product', 'ProductsController@index');
 Route::get('add-product', 'ProductsController@create');
+Route::get('list-product/{product}', 'ProductsController@show');
+Route::post('add-product', 'ProductsController@store');
+Route::delete('list-product/{product}', 'ProductsController@destroy');
+Route::get('list-product/{product}/edit', 'ProductsController@edit');
+Route::patch('list-product/{product}', 'ProductsController@update');
 
 // Route::get('/', function () {
 //     return view('admins/layout/main');
