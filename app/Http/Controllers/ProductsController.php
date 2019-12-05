@@ -43,7 +43,7 @@ class ProductsController extends Controller
             'harga' => 'required',
             'spesifikasi' => 'required',
             'stok' => 'required',
-            'image' => 'required'
+            'image' => 'required|min:1'
         ]);
 
         Product::create($request->all());
@@ -114,14 +114,14 @@ class ProductsController extends Controller
         //
     }
 
-    // private function storeImage($product)
-    // {
-    //     if (request()->has('image')) {
-    //         $product->update([
-    //             'image' => request()->image->store('uploads', 'public'),
-    //         ]);
-    //         $image = Image::make(public_path('storage/' . $product->image))->fit(300, 300, null, 'top-left');
-    //         $image->save();
-    //     }
-    // }
+    private function storeImage($product)
+    {
+        if (request()->has('image')) {
+            $product->update([
+                'image' => request()->image->store('uploads', 'public'),
+            ]);
+            $image = Image::make(public_path('storage/' . $product->image))->fit(300, 300, null, 'top-left');
+            $image->save();
+        }
+    }
 }
