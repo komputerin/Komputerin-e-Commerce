@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'MainController@home');
-// Route::get('/', 'AdminsController@home');
+Route::get('admin', 'AdminsController@home');
 Route::get('login', 'AdminsController@login');
 Route::get('register', 'AdminsController@register');
 Route::get('forgot-password', 'AdminsController@forgotpass');
