@@ -1,6 +1,6 @@
-@include('/admins/partials/header')
-@include('/admins/partials/nav')
-@include('/admins/partials/sidebar')
+@include('/backEnd/partials/header')
+@include('/backEnd/partials/nav')
+@include('/backEnd/partials/sidebar')
 
 <div class="container-fluid"><br>
   <div class="card mb-3">

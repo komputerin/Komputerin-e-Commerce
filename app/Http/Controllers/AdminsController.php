@@ -7,18 +7,18 @@ use Illuminate\Http\Request;
 class AdminsController extends Controller
 {
     public function home(){
-        return view('admins/index');
+        return view('backEnd/index');
     }
 
     public function login(){
-        return view('admins/auth/login');
+        return view('backEnd/auth/login');
     }
 
     public function register(){
-        return view('admins/auth/register');
+        return view('backEnd/auth/register');
     }
 
     public function forgotpass(){
-        return view('admins/auth/forgot-password');
+        return view('backEnd/auth/forgot-password');
     }
 }

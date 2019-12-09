@@ -16,7 +16,7 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('admins/products/list-product', compact('products'));
+        return view('backEnd/products/list-product', compact('products'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('admins/products/add-product');
+        return view('backEnd/products/add-product');
     }
 
     /**
@@ -58,7 +58,7 @@ class ProductsController extends Controller
      */
     public function show(Product $product)
     {
-        return view('admins/products/show', compact('product'));
+        return view('backEnd/products/show', compact('product'));
         
     }
 
@@ -70,7 +70,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        return view('admins/products/edit', ['product' => $product]);
+        return view('backEnd/products/edit', ['product' => $product]);
     }
 
     /**
@@ -99,7 +99,7 @@ class ProductsController extends Controller
     //                 'stok' => $request->stok
     //                 'image' => $request->image
     //             ]);
-    //             return redirect('/admins')->with('status', 'Berhasil Di Tambah!');
+    //             return redirect('/backEnd')->with('status', 'Berhasil Di Tambah!');
     //     }
     }
 
