@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('/test', 'IndexController@index');
 Route::get('/', 'AdminsController@home');
 // Route::get('admin', 'AdminsController@home');
 Route::get('login', 'AdminsController@login');
