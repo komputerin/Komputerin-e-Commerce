@@ -1,4 +1,4 @@
-<div class="left-sidebar">
+<div class="right-sidebar">
     <?php
         $categories=DB::table('categories')->where([['status',1],['parent_id',0]])->get();
     ?>
