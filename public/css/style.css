@@ -647,7 +647,7 @@ ul.pagination .active a {
 }
 
 .bg-3 {
-  background: url(../images/call-to-action/cta-background.jpg);
+  background: url(../img/call-to-action/cta-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -664,6 +664,7 @@ ul.pagination .active a {
   border: 2px solid #dedede;
   margin-right: 8px;
   padding: 6px 20px !important;
+
 }
 
 .add-button {
