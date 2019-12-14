@@ -21,58 +21,96 @@
 
 <body class="bg-dark">
 
-  <div class="container">
+
     <div class="card card-register mx-auto mt-5">
-      <div class="card-header">Register an Account</div>
-      <div class="card-body">
-        <form>
+      {{ csrf_field() }}
+       <form class="form-signin reg-form" method="POST" action="{{ route('register') }}">
+        {{ csrf_field() }}
+
+      <div class="card-header mb-3">Register {{ config('app.name') }}</div>
+       <!--  <h1 class="h3 mb-3 font-weight-normal text-center">Register {{ config('app.name') }}</h1> -->
+
+      <body class="text-center">
+
           <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="text" id="firstName" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
-                  <label for="firstName">First name</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="text" id="lastName" class="form-control" placeholder="Last name" required="required">
-                  <label for="lastName">Last name</label>
-                </div>
+            <div class="col-md-12">
+              <div class="form-label-group">
+                <input type="text" name="name" id="inputName" placeholder="your name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" required autofocus value="{{ old('name') }}">
+                <label for="inputName">your name</label>
+          @if ($errors->has('name')) 
+            <div class="invalid-feedback">
+              {{ $errors->first('name') }}
+            </div> 
+          @endif
+
               </div>
             </div>
           </div>
-          <div class="form-group">
-            <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
-              <label for="inputEmail">Email address</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                  <label for="inputPassword">Password</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
-                  <label for="confirmPassword">Confirm password</label>
-                </div>
+
+
+    <div class="form-group">
+            <div class="col-md-12">
+              <div class="form-label-group">
+        <input type="text" name="email" id="inputEmail" placeholder="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" required autofocus value="{{ old('name') }}">
+       <label for="inputEmail">E-mail</label>
+          @if ($errors->has('email')) 
+            <div class="invalid-feedback">
+              {{ $errors->first('email') }}
+            </div> 
+          @endif
               </div>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="login.html">Register</a>
-        </form>
+          
+
+          <div class="form-group">
+            <div class="col-md-12">
+              <div class="form-label-group">         
+                <input type="password" name="password" id="inputPassword" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }} " placeholder="Password" required autofocus>
+                 <label for="inputPassword">Password</label>
+          @if ($errors->has('password')) 
+            <div class="invalid-feedback">
+              {{ $errors->first('password') }}
+            </div> 
+          @endif
+              </div>
+            </div>
+          </div>
+         
+
+<!--         <div class="checkbox mb-3"> -->
+
+          <div class="form-group">
+            <div class="col-md-12">
+              <div class="form-label-group">
+                <input type="password" name="password_confirmation" id="inputPassword" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}" placeholder="Password Confirmation"required="required" autofocus="autofocus">
+                <label for="inputPassword">Password confirmation</label>
+          @if ($errors->has('password')) 
+            <div class="invalid-feedback">
+              Tolong isi nama anda.
+              {{ $errors->first('password') }}
+            </div> 
+          @endif
+              </div>
+            </div>
+          </div>
+         
+        </body>
+
+        <button class="btn btn-lg btn-primary btn-block text-center reg-btn" type="submit" >Register</button>
+      
+
+      </form>
+
+
         <div class="text-center">
           <a class="d-block small mt-3" href="{{url('login')}}">Login Page</a>
           <a class="d-block small" href="{{url('forgot-password')}}">Forgot Password?</a>
+            <p class="mt-2 text-muted reg-copy">&copy; 2017-2019</p>
         </div>
       </div>
-    </div>
-  </div>
+
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>

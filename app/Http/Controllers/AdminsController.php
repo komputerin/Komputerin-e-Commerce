@@ -3,22 +3,63 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\user;
 
 class AdminsController extends Controller
 {
-    public function home(){
+    public function homeadmin(){
         return view('backEnd/index');
-    }
-
-    public function login(){
-        return view('backEnd/auth/login');
-    }
-
-    public function register(){
-        return view('backEnd/auth/register');
     }
 
     public function forgotpass(){
         return view('backEnd/auth/forgot-password');
     }
+
+    //login
+    public function getLogin() {
+        return view('backEnd/auth/login');
+    }
+
+    public function postLogin(Request $request) {
+        if (!\Auth::attempt(['email' => $request->email, 'password' => $request->password ])) {
+            return redirect()->back();
+        }
+
+        return redirect()->route('homeadmin');
+    }
+
+
+
+   public function getRegister() {
+         return view('backEnd/auth/register');
+    }
+
+
+   public function postRegister(Request $request) {
+
+            $this->validate($request, [
+               'name' => 'required|min:4',
+               'email' =>  'required|email|unique:users',
+               'password' => 'required|min:6|confirmed' // field_confirmation
+            ]);
+
+          User::create([
+      
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
+
+        // return redirect()->back();
+        return redirect()->route('register');
+    } 
+
+
+  public function logout() {
+        \Auth::logout();
+        return redirect()->route('layout/home');
+    }
+
+
+
 }
