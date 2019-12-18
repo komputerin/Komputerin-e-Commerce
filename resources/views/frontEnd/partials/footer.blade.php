@@ -1,109 +1,92 @@
-<!--============================
-=            Footer            =
-=============================-->
-
-<footer class="footer section section-sm">
-  <!-- Container Start -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-0">
-        <!-- About -->
-        <div class="block about">
-          <!-- footer logo -->
-          <img src="images/logo-footer.png" alt="">
-          <!-- description -->
-          <p class="alt-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<footer id="footer"><!--Footer-->
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="companyinfo">
+                        <h2><span>KOMPUTER</span>IN</h2>
+                        <p>Upgrade your PC</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- Link list -->
-      <div class="col-lg-2 offset-lg-1 col-md-3">
-        <div class="block">
-          <h4>Site Pages</h4>
-          <ul>
-            <li><a href="#">Boston</a></li>
-            <li><a href="#">How It works</a></li>
-            <li><a href="#">Deals & Coupons</a></li>
-            <li><a href="#">Articls & Tips</a></li>
-            <li><a href="#">Terms of Services</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Link list -->
-      <div class="col-lg-2 col-md-3 offset-md-1 offset-lg-0">
-        <div class="block">
-          <h4>Admin Pages</h4>
-          <ul>
-            <li><a href="#">Boston</a></li>
-            <li><a href="#">How It works</a></li>
-            <li><a href="#">Deals & Coupons</a></li>
-            <li><a href="#">Articls & Tips</a></li>
-            <li><a href="#">Terms of Services</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Promotion -->
-      <div class="col-lg-4 col-md-7">
-        <!-- App promotion -->
-        <div class="block-2 app-promotion">
-          <a href="">
-            <!-- Icon -->
-            <img src="images/footer/phone-icon.png" alt="mobile-icon">
-          </a>
-          <p>Get the Dealsy Mobile App and Save more</p>
-        </div>
-      </div>
     </div>
-  </div>
-  <!-- Container End -->
-</footer>
-<!-- Footer Bottom -->
-<footer class="footer-bottom">
-    <!-- Container Start -->
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-12">
-          <!-- Copyright -->
-          <div class="copyright">
-            <p>Copyright © 2016. All Rights Reserved</p>
-          </div>
+
+    <div class="footer-widget">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="single-widget">
+                        <h2>Service</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Online Help</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Order Status</a></li>
+                            <li><a href="#">Change Location</a></li>
+                            <li><a href="#">FAQ’s</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="single-widget">
+                        <h2>Quick Shop</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Motherboard</a></li>
+                            <li><a href="#">Processor</a></li>
+                            <li><a href="#">VGA</a></li>
+                            <li><a href="#">Hardisk</a></li>
+                            <li><a href="#">SSD</a></li>
+                            <li><a href="#">RAM</a></li>
+                            <li><a href="#">PSU</a></li>
+                            <li><a href="#">FAN</a></li>
+                            <li><a href="#">Casing</a></li>
+                            <li><a href="#">Water Cooler</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="single-widget">
+                        <h2>Policies</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privecy Policy</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                            <li><a href="#">Billing System</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="single-widget">
+                        <h2>About Shopper</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Company Information</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Affillate Program</a></li>
+                            <li><a href="#">Copyright</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-sm-offset-1">
+                    <div class="single-widget">
+                        <h2>About Shopper</h2>
+                        <form action="#" class="searchform">
+                            <input type="text" placeholder="Your email address" />
+                            <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+                            <p>Get the most recent updates from <br />our site and be updated your self...</p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="col-sm-6 col-12">
-          <!-- Social Icons -->
-          <ul class="social-media-icons text-right">
-              <li><a class="fa fa-facebook" href=""></a></li>
-              <li><a class="fa fa-twitter" href=""></a></li>
-              <li><a class="fa fa-pinterest-p" href=""></a></li>
-              <li><a class="fa fa-vimeo" href=""></a></li>
-            </ul>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <p class="pull-left">Copyright © 2019 KOMPUTERIN Inc. All rights reserved.</p>
+                <p class="pull-right">Designed by <span><a target="_blank" href="https://github.com/komputerin">Komputerin</a></span></p>
+            </div>
         </div>
-      </div>
     </div>
-    <!-- Container End -->
-    <!-- To Top -->
-    <div class="top-to">
-      <a id="top" class="" href=""><i class="fa fa-angle-up"></i></a>
-    </div>
-</footer>
-
-
-<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{url::asset('plugins/jquery/jquery.min.js')}}"></script>
-    <script src="{{url::asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-    <script src="{{url::asset('plugins/tether/js/tether.min.js')}}"></script>
-    <script src="{{url::asset('plugins/raty/jquery.raty-fa.js')}}"></script>
-    <script src="{{url::asset('plugins/bootstrap/dist/js/popper.min.js')}}"></script>
-    <script src="{{url::asset('plugins/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-    <script src="{{url::asset('plugins/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js')}}"></script>
-    <script src="{{url::asset('plugins/slick-carousel/slick/slick.min.js')}}"></script>
-    <script src="{{url::asset('plugins/jquery-nice-select/js/jquery.nice-select.min.js')}}"></script>
-    <script src="{{url::asset('plugins/fancybox/jquery.fancybox.pack.js')}}"></script>
-    <script src="{{url::asset('plugins/smoothscroll/SmoothScroll.min.js')}}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-    <script src="{{url::asset('js/scripts.js')}}"></script>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-</html>
+</footer><!--/Footer-->

@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use App\Product;
+// use App\Category;
 
-class MainController extends Controller
+class FEndController extends Controller
 {
-    public function home(){
-        return view('frontEnd/main');
+    public function index(){
+        $products = Product::all();
+        // $categories = Category::all();
+        return view('frontEnd/main', compact('products'));
     }
 }
 // {
