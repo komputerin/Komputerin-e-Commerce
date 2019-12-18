@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\user;
+use Auth;
 
 class AdminsController extends Controller
 {
@@ -21,11 +22,14 @@ class AdminsController extends Controller
     }
 
     public function postLogin(Request $request) {
-        if (!\Auth::attempt(['email' => $request->email, 'password' => $request->password ])) {
-            return redirect()->back();
+      $id = 1;
+        if (Auth::attempt(['id'=>$id, 'email' => $request->email, 'password' => $request->password ])) {
+            return redirect('/admin');
+        } else if (Auth::attempt(['email' => $request->email, 'password' => $request->password ])) {
+           return redirect('/');
         }
 
-        return redirect()->route('homeadmin');
+        return redirect()->route('login');
     }
 
 
@@ -51,7 +55,7 @@ class AdminsController extends Controller
         ]);
 
         // return redirect()->back();
-        return redirect()->route('register');
+        return redirect('/');
     } 
 
 

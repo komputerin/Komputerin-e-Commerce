@@ -15,7 +15,8 @@
 Route::get('/', 'MainController@home')->name('home');
 
 
-// Route::get('/', 'AdminsController@homeadmin')->name('homeadmin');
+Route::get('/admin', 'AdminsController@homeadmin');
+
 
 Route::post('/register', 'AdminsController@postRegister');
 Route::get('/register', 'AdminsController@getRegister')->name('register');
@@ -27,9 +28,6 @@ Route::get('/login', 'AdminsController@getLogin')->name('login');
 Route::get('/logout', 'AutController@logout')->name('logout');
 
 
-
-// Route::get('/', 'MainController@home')->name('home')->middleware('guest');
-// // Route::get('/login', 'AdminsController@login');
 
 // Route::get('/', 'AdminsController@homeadmin')->name('homeadmin')->middleware('auth');
 
