@@ -148,10 +148,10 @@
 							</a>
 						</div>
 						<div class="card-body">
-							<h4 class="card-title"><a href="">{{ $product->nama }}</a></h4>
+							<h4 class="card-title"><a href="/list-product/{{ $product->id }}">{{ $product->nama }}</a></h4>
 							<ul class="list-inline product-meta">
 								<li class="list-inline-item">
-									<a href="/list-product/{{ $product->id }}"><i class="fa fa-folder-open-o"></i>Processor</a>
+									<a href=""><i class="fa fa-folder-open-o"></i>Processor</a>
 								</li>
 								<li class="list-inline-item">
 									<a href=""><i class="fa fa-calendar"></i>26th December</a>
