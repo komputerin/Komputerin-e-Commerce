@@ -136,6 +136,7 @@
 		</div>
 		<div class="row">
 			<!-- offer 01 -->
+
 			@foreach($products as $product)
 			<div class="col-sm-12 col-lg-3">
 				<!-- product card -->
