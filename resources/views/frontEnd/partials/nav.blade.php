@@ -136,8 +136,10 @@
 		</div>
 		<div class="row">
 			<!-- offer 01 -->
+<<<<<<< HEAD:resources/views/frontEnd/partials/nav.blade.php
 
 			@foreach($products as $product)
+=======
 			<div class="col-sm-12 col-lg-3">
 				<!-- product card -->
 				<div class="product-item bg-light">
@@ -145,6 +147,79 @@
 						<div class="thumb-content">
 							<!-- <div class="price">$200</div> -->
 							<a href="">
+								<img class="card-img-top img-fluid" src="{{url('img/products/products-3.jpg')}}" alt="Card image cap">
+							</a>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title"><a href="">CORE i7 UNLOCKED</a></h4>
+							<ul class="list-inline product-meta">
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-folder-open-o"></i>Processor</a>
+								</li>
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-calendar"></i>26th December</a>
+								</li>
+							</ul>
+							<h3><p class="card-text">Rp. 6.200.000</p></h3>
+							<div class="product-ratings">
+								<ul class="list-inline">
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item"><i class="fa fa-star"></i></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-sm-12 col-lg-3">
+				<!-- product card -->
+				<div class="product-item bg-light">
+					<div class="card">
+						<div class="thumb-content">
+							<!-- <div class="price">$200</div> -->
+							<a href="">
+								<img class="card-img-top img-fluid" src="{{url('img/products/products-5.jpg')}}" alt="Card image cap">
+							</a>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title"><a href="">HARDISK RAID - TOSHIBA</a></h4>
+							<ul class="list-inline product-meta">
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-folder-open-o"></i>Hardisk</a>
+								</li>
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-calendar"></i>26th December</a>
+								</li>
+							</ul>
+							<h3><p class="card-text">Rp. 1.850.000</p></h3>
+							<div class="product-ratings">
+								<ul class="list-inline">
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item"><i class="fa fa-star"></i></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+>>>>>>> adel:resources/views/layout/partials/nav.blade.php
+			<div class="col-sm-12 col-lg-3">
+				<!-- product card -->
+				<div class="product-item bg-light">
+					<div class="card">
+						<div class="thumb-content">
+							<!-- <div class="price">$200</div> -->
+							<a href="">
+<<<<<<< HEAD:resources/views/frontEnd/partials/nav.blade.php
 								<img class="card-img-top img-fluid" src="" alt="Card image cap">
 							</a>
 						</div>
@@ -153,26 +228,87 @@
 							<ul class="list-inline product-meta">
 								<li class="list-inline-item">
 									<a href=""><i class="fa fa-folder-open-o"></i>{{ $product->kategori }}</a>
+=======
+								<img class="card-img-top img-fluid" src="{{url('img/products/products-6.jpg')}}" alt="Card image cap">
+							</a>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title"><a href="">SSD 2,5 Inch - SAMSUNG</a></h4>
+							<ul class="list-inline product-meta">
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-folder-open-o"></i>SSD</a>
+>>>>>>> adel:resources/views/layout/partials/nav.blade.php
 								</li>
 								<li class="list-inline-item">
 									<a href=""><i class="fa fa-calendar"></i>26th December</a>
 								</li>
 							</ul>
+<<<<<<< HEAD:resources/views/frontEnd/partials/nav.blade.php
 							<h3><p class="card-text">Rp. {{ $product->harga }}</p></h3>
 							<div class="product-ratings">
 								<!-- <ul class="list-inline">
+=======
+							<h3><p class="card-text">Rp. 480.000</p></h3>
+							<div class="product-ratings">
+								<ul class="list-inline">
+>>>>>>> adel:resources/views/layout/partials/nav.blade.php
 									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
 									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
 									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
 									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
 									<li class="list-inline-item"><i class="fa fa-star"></i></li>
+<<<<<<< HEAD:resources/views/frontEnd/partials/nav.blade.php
 								</ul> -->
+=======
+								</ul>
+>>>>>>> adel:resources/views/layout/partials/nav.blade.php
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+<<<<<<< HEAD:resources/views/frontEnd/partials/nav.blade.php
 			@endforeach
+=======
+
+		
+			<div class="col-sm-12 col-lg-3">
+				<!-- product card -->
+				<div class="product-item bg-light">
+					<div class="card">
+						<div class="thumb-content">
+							<!-- <div class="price">$200</div> -->
+							<a href="">
+								<img class="card-img-top img-fluid" src="{{url('img/products/products-7.jpg')}}" alt="Card image cap">
+							</a>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title"><a href="">GIGABYTE Motherboard Socket TR4 X399 AORUS Pro</a></h4>
+							<ul class="list-inline product-meta">
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-folder-open-o"></i>Motherboard</a>
+								</li>
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-calendar"></i>26th December</a>
+								</li>
+							</ul>
+							<h3><p class="card-text">Rp. 4.338.000</p></h3>
+							<div class="product-ratings">
+								<ul class="list-inline">
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item"><i class="fa fa-star"></i></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+>>>>>>> adel:resources/views/layout/partials/nav.blade.php
 </section>
 
 
