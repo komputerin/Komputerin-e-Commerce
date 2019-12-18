@@ -4,7 +4,7 @@
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg  navigation">
 					<a class="navbar-brand" href="{{url('/index')}}">
-						<img src="{{url('img/cau.png')}}" alt="">
+						<img src="{{url('img/logo.png')}}" alt="">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10">
 							<li class="nav-item">
-								<a class="nav-link login-button" href="">Login</a>
+								<a class="nav-link login-button" href="{{url('login')}}" type="button">Login</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link add-button" href="#"><i class="fa fa-plus-circle"></i> Add Listing</a>
@@ -62,7 +62,7 @@
 =            Hero Area            =
 ================================-->
 
-<section class="hero-area bg-1 text-center overly">
+<section class="hero-area bg-3 text-center overly">
 	<!-- Container Start -->
 	<div class="container">
 		<div class="row">
@@ -75,18 +75,18 @@
 						<h2>Popular Category</h2>
 						<ul class="list-inline">
 							<li class="list-inline-item">
-								<a href=""><i class="fa fa-bed"></i> Processor</a></li>
+								<a href=""><i class="fa-computer"></i> Processor</a></li>
 							<li class="list-inline-item">
-								<a href=""><i class="fa fa-grav"></i> Motherboard</a>
+								<a href=""><i class="fa-computer"></i> Motherboard</a>
 							</li>
 							<li class="list-inline-item">
-								<a href=""><i class="fa fa-car"></i> VGA</a>
+								<a href=""><i class="fa"></i> VGA</a>
 							</li>
 							<li class="list-inline-item">
-								<a href=""><i class="fa fa-cutlery"></i> RAM</a>
+								<a href=""><i class="fa"></i> RAM</a>
 							</li>
 							<li class="list-inline-item">
-								<a href=""><i class="fa fa-coffee"></i> Power Suply</a>
+								<a href=""><i class="fa"></i> Power Suply</a>
 							</li>
 						</ul>
 					</div>
@@ -97,11 +97,6 @@
 					<form action="#">
 						<div class="row">
 							<!-- Store Search -->
-							<div class="col-lg-6 col-md-12">
-								<div class="block d-flex">
-									<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for store">
-								</div>
-							</div>
 							<div class="col-lg-6 col-md-12">
 								<div class="block d-flex">
 									<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for store">
@@ -141,119 +136,149 @@
 		</div>
 		<div class="row">
 			<!-- offer 01 -->
-			<div class="col-sm-12 col-lg-4">
+			@foreach($products as $product)
+			<div class="col-sm-12 col-lg-3">
 				<!-- product card -->
-<div class="product-item bg-light">
-	<div class="card">
-		<div class="thumb-content">
-			<!-- <div class="price">$200</div> -->
-			<a href="">
-				<img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
-			</a>
-		</div>
-		<div class="card-body">
-		    <h4 class="card-title"><a href="">11inch Macbook Air</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href=""><i class="fa fa-folder-open-o"></i>Electronics</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href=""><i class="fa fa-calendar"></i>26th December</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
-		    <div class="product-ratings">
-		    	<ul class="list-inline">
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
-		    	</ul>
-		    </div>
-		</div>
-	</div>
-</div>
-
-
-
+				<div class="product-item bg-light">
+					<div class="card">
+						<div class="thumb-content">
+							<!-- <div class="price">$200</div> -->
+							<a href="">
+								<img class="card-img-top img-fluid" src="{{url('img/products/products-3.jpg')}}" alt="Card image cap">
+							</a>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title"><a href="">{{ $product->nama }}</a></h4>
+							<ul class="list-inline product-meta">
+								<li class="list-inline-item">
+									<a href="/list-product/{{ $product->id }}"><i class="fa fa-folder-open-o"></i>Processor</a>
+								</li>
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-calendar"></i>26th December</a>
+								</li>
+							</ul>
+							<h3><p class="card-text"></p>{{ $product->harga }}</h3>
+							<div class="product-ratings">
+								<ul class="list-inline">
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item"><i class="fa fa-star"></i></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-sm-12 col-lg-4">
+			@endforeach
+
+
+			<div class="col-sm-12 col-lg-3">
 				<!-- product card -->
-<div class="product-item bg-light">
-	<div class="card">
-		<div class="thumb-content">
-			<!-- <div class="price">$200</div> -->
-			<a href="">
-				<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
-			</a>
-		</div>
-		<div class="card-body">
-		    <h4 class="card-title"><a href="">Full Study Table Combo</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href=""><i class="fa fa-folder-open-o"></i>Furnitures</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href=""><i class="fa fa-calendar"></i>26th December</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
-		    <div class="product-ratings">
-		    	<ul class="list-inline">
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
-		    	</ul>
-		    </div>
-		</div>
-	</div>
-</div>
-
-
-
+				<div class="product-item bg-light">
+					<div class="card">
+						<div class="thumb-content">
+							<!-- <div class="price">$200</div> -->
+							<a href="">
+								<img class="card-img-top img-fluid" src="{{url('img/products/products-5.jpg')}}" alt="Card image cap">
+							</a>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title"><a href="">HARDISK RAID - TOSHIBA</a></h4>
+							<ul class="list-inline product-meta">
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-folder-open-o"></i>Hardisk</a>
+								</li>
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-calendar"></i>26th December</a>
+								</li>
+							</ul>
+							<h3><p class="card-text">Rp. 1.850.000</p></h3>
+							<div class="product-ratings">
+								<ul class="list-inline">
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item"><i class="fa fa-star"></i></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-sm-12 col-lg-4">
+
+			<div class="col-sm-12 col-lg-3">
 				<!-- product card -->
-<div class="product-item bg-light">
-	<div class="card">
-		<div class="thumb-content">
-			<!-- <div class="price">$200</div> -->
-			<a href="">
-				<img class="card-img-top img-fluid" src="images/products/products-3.jpg" alt="Card image cap">
-			</a>
-		</div>
-		<div class="card-body">
-		    <h4 class="card-title"><a href="">11inch Macbook Air</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href=""><i class="fa fa-folder-open-o"></i>Electronics</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href=""><i class="fa fa-calendar"></i>26th December</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
-		    <div class="product-ratings">
-		    	<ul class="list-inline">
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
-		    	</ul>
-		    </div>
-		</div>
-	</div>
-</div>
-
-
-
+				<div class="product-item bg-light">
+					<div class="card">
+						<div class="thumb-content">
+							<!-- <div class="price">$200</div> -->
+							<a href="">
+								<img class="card-img-top img-fluid" src="{{url('img/products/products-6.jpg')}}" alt="Card image cap">
+							</a>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title"><a href="">SSD 2,5 Inch - SAMSUNG</a></h4>
+							<ul class="list-inline product-meta">
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-folder-open-o"></i>SSD</a>
+								</li>
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-calendar"></i>26th December</a>
+								</li>
+							</ul>
+							<h3><p class="card-text">Rp. 480.000</p></h3>
+							<div class="product-ratings">
+								<ul class="list-inline">
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item"><i class="fa fa-star"></i></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			
-			
+
+		
+			<div class="col-sm-12 col-lg-3">
+				<!-- product card -->
+				<div class="product-item bg-light">
+					<div class="card">
+						<div class="thumb-content">
+							<!-- <div class="price">$200</div> -->
+							<a href="">
+								<img class="card-img-top img-fluid" src="{{url('img/products/products-7.jpg')}}" alt="Card image cap">
+							</a>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title"><a href="">GIGABYTE Motherboard Socket TR4 X399 AORUS Pro</a></h4>
+							<ul class="list-inline product-meta">
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-folder-open-o"></i>Motherboard</a>
+								</li>
+								<li class="list-inline-item">
+									<a href=""><i class="fa fa-calendar"></i>26th December</a>
+								</li>
+							</ul>
+							<h3><p class="card-text">Rp. 4.338.000</p></h3>
+							<div class="product-ratings">
+								<ul class="list-inline">
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+									<li class="list-inline-item"><i class="fa fa-star"></i></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
 		</div>
 	</div>
 </section>
