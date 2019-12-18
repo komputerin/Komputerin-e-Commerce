@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-use App\Beranda;
+use App\Product;
 
 class MainController extends Controller
 {
     public function home(){
-        return view('layout/main');
+        return view('frontEnd/main');
     }
 }
 // {

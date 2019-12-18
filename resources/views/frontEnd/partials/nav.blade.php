@@ -136,42 +136,7 @@
 		</div>
 		<div class="row">
 			<!-- offer 01 -->
-			@foreach($products as $product)
-			<div class="col-sm-12 col-lg-3">
-				<!-- product card -->
-				<div class="product-item bg-light">
-					<div class="card">
-						<div class="thumb-content">
-							<!-- <div class="price">$200</div> -->
-							<a href="">
-								<img class="card-img-top img-fluid" src="{{url('img/products/products-3.jpg')}}" alt="Card image cap">
-							</a>
-						</div>
-						<div class="card-body">
-							<h4 class="card-title"><a href="/list-product/{{ $product->id }}">{{ $product->nama }}</a></h4>
-							<ul class="list-inline product-meta">
-								<li class="list-inline-item">
-									<a href=""><i class="fa fa-folder-open-o"></i>Processor</a>
-								</li>
-								<li class="list-inline-item">
-									<a href=""><i class="fa fa-calendar"></i>26th December</a>
-								</li>
-							</ul>
-							<h3><p class="card-text"></p>{{ $product->harga }}</h3>
-							<div class="product-ratings">
-								<ul class="list-inline">
-									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-									<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-									<li class="list-inline-item"><i class="fa fa-star"></i></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			@endforeach
+			
 
 
 			<div class="col-sm-12 col-lg-3">
