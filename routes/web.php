@@ -12,16 +12,16 @@
 */
 
 
-Route::get('/', 'FEndController@index')->name('home')->middleware('guest');
-Route::get('/admin', 'AdminsController@homeadmin')->name('homeadmin')->middleware('auth');
+Route::get('/', 'FEndController@index')->name('home');
+Route::get('/admin', 'AdminsController@homeadmin')->name('homeadmin');
 
 Route::post('/register', 'AdminsController@postRegister')->middleware('guest');
-Route::get('/register', 'AdminsController@getRegister')->name('register')->middleware('guest');
+Route::get('/register', 'AdminsController@getRegister')->name('register');
 
 Route::post('/login', 'AdminsController@postLogin')->middleware('guest');
-Route::get('/login', 'AdminsController@getLogin')->name('login')->middleware('guest');
+Route::get('/login', 'AdminsController@getLogin')->name('login');
 
-Route::get('/logout', 'AutController@logout')->name('logout')->middleware('auth');
+Route::get('/logout', 'AutController@logout')->name('logout');
 
 
 Route::get('forgot-password', 'AdminsController@forgotpass');
