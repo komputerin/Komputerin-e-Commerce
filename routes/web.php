@@ -12,10 +12,18 @@
 */
 
 
-Route::get('/', 'FEndController@index');
-Route::get('admin', 'AdminsController@home');
-Route::get('login', 'AdminsController@login');
-Route::get('register', 'AdminsController@register');
+Route::get('/', 'FEndController@index')->name('home')->middleware('guest');
+Route::get('/admin', 'AdminsController@homeadmin')->name('homeadmin')->middleware('auth');
+
+Route::post('/register', 'AdminsController@postRegister')->middleware('guest');
+Route::get('/register', 'AdminsController@getRegister')->name('register')->middleware('guest');
+
+Route::post('/login', 'AdminsController@postLogin')->middleware('guest');
+Route::get('/login', 'AdminsController@getLogin')->name('login')->middleware('guest');
+
+Route::get('/logout', 'AutController@logout')->name('logout')->middleware('auth');
+
+
 Route::get('forgot-password', 'AdminsController@forgotpass');
 Route::get('list-product', 'ProductsController@index');
 Route::get('add-product', 'ProductsController@create');

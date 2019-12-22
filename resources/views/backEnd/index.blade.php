@@ -92,5 +92,5 @@
         </div>
       </div>
 
-      @include('/admins/partials/footer')
-      @endsection ('container')
+      @include('/backEnd/partials/footer')
+      @section ('container')
