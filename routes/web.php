@@ -12,6 +12,13 @@
 */
 
 
+////// get Attribute ////////////
+Route::get('/get-product-attr','IndexController@getAttrs');
+
+/// Apply Coupon Code
+Route::post('/apply-coupon','CouponController@applycoupon');
+
+
 /// Setting Area
 Route::get('/settings', 'AdminController@settings');
 Route::get('/check-pwd','AdminController@chkPassword');
