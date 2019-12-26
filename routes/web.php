@@ -41,8 +41,8 @@ Route::post('/register', 'AdminController@postRegister');
 Route::get('/register', 'AdminController@getRegister')->name('register');
 
 /// login
-Route::post('/login', 'AdminController@postLogin');
-Route::get('/login', 'Adminsontroller@getLogin')->name('login');
+Route::post('/login', 'UsersController@postLogin');
+Route::get('/login', 'UsersController@getLogin')->name('login');
 
 /// Products Area
 Route::resource('/product','ProductsController');
