@@ -23,30 +23,33 @@
 
   <div class="container">
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Login</div>
+       {{ csrf_field() }}
+      <div class="card-header">Login {{ config('app.name') }}</div>
       <div class="card-body">
-        <form>
-          <div class="form-group">
-            <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
-              <label for="inputEmail">Email address</label>
-            </div>
+     
+        <form class="form-signin" method="POST" action="{{ route('login') }}">
+        {{ csrf_field() }}
+        <div class="form-group">
+               <input type="text" id="role_id" name="role_id" value="1" hidden>
+          <div class="label-group">
+               <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus>
+                <label for="inputEmail" class="sr-only">Email address</label>
+
           </div>
-          <div class="form-group">
-            <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-              <label for="inputPassword">Password</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="remember-me">
-                Remember Password
-              </label>
-            </div>
-          </div>
-          <a class="btn btn-primary btn-block" href="{{url('/')}}">Login</a>
+        </div>
+
+        <div class="form-group">
+          <div class="label-group">
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required autofocus>   
+              <label for="inputPassword" class="sr-only">Password</label>
+             <div class="checkbox mb-3">
+        </div>
+      </div>
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="{{url('register')}}">Register an Account</a>

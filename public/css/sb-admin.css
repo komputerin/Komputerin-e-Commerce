@@ -48,6 +48,22 @@
   box-sizing: border-box;
 }
 
+
+.reg-copy {
+
+  font-size: 12px; display: flex; justify-content: center; flex-direction: column; text-align: center;
+}
+
+
+.reg-btn {
+  width: auto !important;
+  margin: 0px 15px; font-size: 1rem;
+}
+
+.reg-form {
+  display: flex; justify-content: center; flex-direction: column;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -10819,7 +10835,7 @@ body {
 }
 
 .card-register {
-  max-width: 40rem;
+  max-width: 30rem;
 }
 
 .form-label-group {
