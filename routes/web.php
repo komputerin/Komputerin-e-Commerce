@@ -12,60 +12,31 @@
 */
 
 
-Route::get('/', 'FEndController@index')->name('home');
-Route::get('/admin', 'AdminsController@homeadmin')->name('homeadmin');
+////// get Attribute ////////////
+Route::get('/get-product-attr','IndexController@getAttrs');
 
-Route::post('/register', 'AdminsController@postRegister')->middleware('guest');
-Route::get('/register', 'AdminsController@getRegister')->name('register');
-
-Route::post('/login', 'AdminsController@postLogin')->middleware('guest');
-Route::get('/login', 'AdminsController@getLogin')->name('login');
-
-Route::get('/logout', 'AutController@logout')->name('logout');
+/// Apply Coupon Code
+Route::post('/apply-coupon','CouponController@applycoupon');
 
 
-Route::get('forgot-password', 'AdminsController@forgotpass');
-Route::get('list-product', 'ProductsController@index');
-Route::get('add-product', 'ProductsController@create');
-Route::get('list-product/{product}', 'ProductsController@show');
-Route::post('add-product', 'ProductsController@store');
-Route::delete('list-product/{product}', 'ProductsController@destroy');
-Route::get('list-product/{product}/edit', 'ProductsController@edit');
-Route::patch('list-product/{product}', 'ProductsController@update');
-
-// Route::get('/', function () {
-//     return view('admins/layout/main');
-// });
-
-// Route::get('/admins', 'AdminsController@products');
-// Route::get('/admins/login', function(){
-//     return view('/admins/login');
-// });
-// Route::get('/admins/product', function(){
-//     return view('/admins/product');
-// });
-
-// Route::get('/admins/products', function(){
-//     return view('/admins/products');
-// });
-
-// Route::get('/admins/register', function(){
-//     return view('admins.register');
-// });
-
-// Route::get('/admins/forgot', function(){
-//     return view('admins.forgot-password');
-// });
-
-
-
-
-// Route::get('/about', 'PageController@about');
-// Route::get('/mahasiswa', 'MahasiswaController@index');
-// // Route::get('/students', 'StudentsController@index');
-// // Route::get('/students/create', 'StudentsController@create');
-// // Route::get('/students/{student}', 'StudentsController@show');
-// // Route::post('/students', 'StudentsController@store');
-// // Route::delete('/students/{student}', 'StudentsController@destroy');
-// // Route::get('/students/{student}/edit', 'StudentsController@edit');
-// // Route::patch('/students/{student}', 'StudentsController@update');
+/// Setting Area
+Route::get('/settings', 'AdminController@settings');
+Route::get('/check-pwd','AdminController@chkPassword');
+Route::post('/update-pwd','AdminController@updatAdminPwd');
+/// Category Area
+Route::resource('/category','CategoryController');
+Route::get('delete-category/{id}','CategoryController@destroy');
+Route::get('/check_category_name','CategoryController@checkCateName');
+/// Products Area
+Route::resource('/product','ProductsController');
+Route::get('delete-product/{id}','ProductsController@destroy');
+Route::get('delete-image/{id}','ProductsController@deleteImage');
+/// Product Attribute
+Route::resource('/product_attr','ProductAtrrController');
+Route::get('delete-attribute/{id}','ProductAtrrController@deleteAttr');
+/// Product Images Gallery
+Route::resource('/image-gallery','ImagesController');
+Route::get('delete-imageGallery/{id}','ImagesController@destroy');
+/// ///////// Coupons Area //////////
+Route::resource('/coupon','CouponController');
+Route::get('delete-coupon/{id}','CouponController@destroy');
