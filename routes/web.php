@@ -11,6 +11,13 @@
 |
 */
 
+Route::get('/','IndexController@index');
+Route::get('/list-products','IndexController@shop');
+Route::get('/cat/{id}','IndexController@listByCat')->name('cats');
+Route::get('/product-detail/{id}','IndexController@detialpro');
+
+// // home //
+// Route::get('/', 'FEndController@index')->name('home');
 
 ////// get Attribute ////////////
 Route::get('/get-product-attr','IndexController@getAttrs');
@@ -19,7 +26,8 @@ Route::get('/get-product-attr','IndexController@getAttrs');
 Route::post('/apply-coupon','CouponController@applycoupon');
 
 
-/// Setting Area
+/// Setting Area / admin
+Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/settings', 'AdminController@settings');
 Route::get('/check-pwd','AdminController@chkPassword');
 Route::post('/update-pwd','AdminController@updatAdminPwd');
@@ -27,6 +35,15 @@ Route::post('/update-pwd','AdminController@updatAdminPwd');
 Route::resource('/category','CategoryController');
 Route::get('delete-category/{id}','CategoryController@destroy');
 Route::get('/check_category_name','CategoryController@checkCateName');
+
+/// Reg 
+Route::post('/register', 'AdminController@postRegister');
+Route::get('/register', 'AdminController@getRegister')->name('register');
+
+/// login
+Route::post('/login', 'AdminController@postLogin');
+Route::get('/login', 'Adminsontroller@getLogin')->name('login');
+
 /// Products Area
 Route::resource('/product','ProductsController');
 Route::get('delete-product/{id}','ProductsController@destroy');
