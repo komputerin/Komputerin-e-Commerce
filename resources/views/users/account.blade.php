@@ -1,4 +1,4 @@
-@extends('frontEnd.layouts.master')
+@extends('users.layouts.master')
 @section('title','My Account Page')
 @section('slider')
 @endsection
