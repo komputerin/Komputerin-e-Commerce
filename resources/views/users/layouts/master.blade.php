@@ -24,11 +24,8 @@
 
 <body>
 @include('users.layouts.header')
-@section('slider')
-@include('users.layouts.slider')
 @show
 @yield('content')
-@include('users.layouts.footer')
 <script src="{{asset('frontEnd/js/jquery.js')}}"></script>
 <script src="{{asset('frontEnd/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('frontEnd/js/jquery.scrollUp.min.js')}}"></script>
