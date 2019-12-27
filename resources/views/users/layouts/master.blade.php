@@ -23,12 +23,12 @@
 </head><!--/head-->
 
 <body>
-@include('frontEnd.layouts.header')
+@include('users.layouts.header')
 @section('slider')
-    @include('frontEnd.layouts.slider')
+@include('users.layouts.slider')
 @show
 @yield('content')
-@include('frontEnd.layouts.footer')
+@include('users.layouts.footer')
 <script src="{{asset('frontEnd/js/jquery.js')}}"></script>
 <script src="{{asset('frontEnd/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('frontEnd/js/jquery.scrollUp.min.js')}}"></script>
