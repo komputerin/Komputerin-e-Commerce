@@ -20,7 +20,6 @@
                                     <div class="user-thumb"> <img width="40" height="40" alt="User" src="{{url('products/small',$product->image)}}"> </div>
                                     <div class="article-post">
                                         <span class="user-info">Product Code : <b>{{$product->p_code}}</b></span>
-                                        <p>Product Color : <b>{{$product->p_color}}</b></p>
                                     </div>
                                 </li>
                                 <li>

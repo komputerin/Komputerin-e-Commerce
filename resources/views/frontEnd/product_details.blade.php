@@ -45,7 +45,7 @@
                         <span>
                             <span id="dynamic_price">Rp. {{$detail_product->price}}</span>
                             <label>Quantity:</label>
-                            <input type="text" name="quantity" value="{{$totalStock}}" id="inputStock"/>
+                            <input type="text" name="quantity" value="1" id="inputStock"/>
                             @if($totalStock>0)
                             <button type="submit" class="btn btn-fefault cart" id="buttonAddToCart">
                                 <i class="fa fa-shopping-cart"></i>
