@@ -100,11 +100,11 @@
                     <div class="total_area">
                         <ul>
                             @if(Session::has('discount_amount_price'))
-                                <li>Sub Total <span>$ {{$total_price}}</span></li>
+                                <li>Sub Total <span>Rp. {{$total_price}}</span></li>
                                 <li>Coupon Discount (Code : {{Session::get('coupon_code')}}) <span>$ {{Session::get('discount_amount_price')}}</span></li>
-                                <li>Total <span>$ {{$total_price-Session::get('discount_amount_price')}}</span></li>
+                                <li>Total <span>Rp. {{$total_price-Session::get('discount_amount_price')}}</span></li>
                             @else
-                                <li>Total <span>$ {{$total_price}}</span></li>
+                                <li>Total <span>Rp. {{$total_price}}</span></li>
                             @endif
                         </ul>
                         <div style="margin-left: 20px;"><a class="btn btn-default check_out" href="{{url('/check-out')}}">Check Out</a></div>

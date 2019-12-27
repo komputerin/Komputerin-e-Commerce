@@ -1,18 +1,18 @@
-@extends('frontEnd.layouts.master')
-@section('title','Detial Page')
+@extends('users.layouts.master')
+@section('title','Detail Page')
 @section('slider')
 @endsection
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-sm-9 padding-right">
+        <h2 class="title text-center" style="margin-top: -30px">{{$detail_product->p_name}}</h2>
+            <div class="col-sm-11 padding-right">
                 @if(Session::has('message'))
                     <div class="alert alert-success text-center" role="alert">
                         {{Session::get('message')}}
                     </div>
                 @endif
         <div class="product-details"><!--product-details-->
-
             <div class="col-sm-5">
                 <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
                     <a href="{{url('products/large',$detail_product->image)}}">
@@ -61,7 +61,6 @@
                             @endif
                         </p>
                         <p><b>Condition:</b> New</p>
-                        <a href=""><img src="{{asset('frontEnd/images/product-details/share.png')}}" class="share img-responsive"  alt="" /></a>
                     </div><!--/product-information-->
                 </form>
 
@@ -106,41 +105,6 @@
 
             </div>
         </div><!--/category-tab-->
-
-        <div class="recommended_items"><!--recommended_items-->
-            <h2 class="title text-center">recommended items</h2>
-
-            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <?php $countChunk=0;?>
-                    @foreach($relateProducts->chunk(3) as $chunk)
-                        <?php $countChunk++; ?>
-                        <div class="item<?php if($countChunk==1){ echo' active';} ?>">
-                            @foreach($chunk as $item)
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{url('/products/small',$item->image)}}" alt="" style="width: 150px;"/>
-                                                <h2>{{$item->price}}</h2>
-                                                <p>{{$item->p_name}}</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    @endforeach
-                </div>
-                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-        </div><!--/recommended_items-->
 
     </div>
         </div>

@@ -1,16 +1,17 @@
 @extends('frontEnd.layouts.master')
-@section('title','Home Page')
+@section('title','Search Products')
+@section('slider')
+@endsection
 @section('content')
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    @include('frontEnd.layouts.category_menu')
-                </div>
+    <div class="search-container container">
+        <h1>Search Result</h1>
+        <p>{{ $products->count() }} result(s) for '{{ request()->input('query') }}'</p>
 
-                <div class="col-sm-9 padding-right">
+        <div class="col-sm-12">
                     <div class="features_items"><!--features_items-->
-                        <h2 class="title text-center">Features Items</h2>
+                        <h2 class="title text-center">
+                            {{ request()->input('query') }}
+                        </h2>
                         @foreach($products as $product)
                             @if($product->category->status==1)
                                 <div class="col-sm-4">
@@ -28,8 +29,8 @@
                             @endif
                         @endforeach
                     </div><!--features_items-->
+
                 </div>
-            </div>
-        </div>
-    </section>
+
+    </div>
 @endsection

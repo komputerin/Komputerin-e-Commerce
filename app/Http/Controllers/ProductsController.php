@@ -76,8 +76,17 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
+
     }
 
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $products = Products_model::where('p_name', 'like', "%$query%")->get();
+
+        return view('frontEnd.search-result')->with('products', $products);
+    }
     /**
      * Show the form for editing the specified resource.
      *

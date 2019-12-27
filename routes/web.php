@@ -19,8 +19,11 @@ Route::get('/product-detail/{id}','IndexController@detialpro');
 ////// get Attribute ////////////
 Route::get('/get-product-attr','IndexController@getAttrs');
 
+////// Search ////////////
+Route::get('/search','ProductsController@search')->name('search');
+
 ///// Cart Area /////////
-Route::post('/addToCart','CartController@addToCart')->name('addToCart');
+Route::post('/addToCart','CartController@index')->name('addToCart');
 Route::get('/viewcart','CartController@index');
 Route::get('/cart/deleteItem/{id}','CartController@deleteItem');
 Route::get('/cart/update-quantity/{id}/{quantity}','CartController@updateQuantity');

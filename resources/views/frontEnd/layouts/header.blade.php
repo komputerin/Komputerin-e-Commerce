@@ -36,9 +36,7 @@
                 </div>
 
                 <div class="col-sm-4">
-                    <div class="search_box pull-right" style="width: 50px;">
-                        <input type="text" placeholder="Search"/>
-                    </div>
+                    @include ('frontEnd.layouts.search')
                 </div>
 
                 
