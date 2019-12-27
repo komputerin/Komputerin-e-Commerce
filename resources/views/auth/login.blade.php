@@ -1,81 +1,69 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap-responsive.min.css')}}" />
     <link rel="stylesheet" href="{{asset('css/matrix-login.css')}}" />
     <link href="{{asset('font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 
-  <title>Komputerin Login</title>
-
-
 </head>
+<body>
+<div id="loginbox">
+    <form id="loginform" class="form-vertical" method="POST" action="{{ route('login') }}">
+        <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <div class="control-group normal_text"> <h3><img src="{{asset('img/logo.png')}}" alt="Logo" /></h3></div>
+        <div class="control-group">
+            <div class="controls">
+                <div class="main_input_box">
+                    <span class="add-on bg_lg"><i class="icon-user"> </i></span>
+                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                    @if ($errors->has('email'))
+                        <br><span class="invalid-feedback" style="color: red;">
+                    <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <div class="main_input_box">
+                    <span class="add-on bg_ly"><i class="icon-lock"></i></span>
+                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                    @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+        </div>
+        <div class="form-actions">
+            <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">Lost password?</a></span>
+            <span class="pull-right"><button type="submit" class="btn btn-success">Login</button></span>
+        </div>
+    </form>
+    <form id="recoverform" action="#" class="form-vertical">
+        <p class="normal_text">Enter your e-mail address below and we will send you instructions how to recover a password.</p>
 
-<body class="bg-dark">
-
-  <div id="loginbox">
-      <form id="loginform" class="form-vertical" method="POST" action="{{  route('login')}}">
-      <input type="hidden" name="_token" value="{{csrf_token()}}">
-      <div class="control-group normal_text"></div>
-        
-
-      </form>  
-  
-
-
-  </div> -->
-
-  <div class="container">
-    <div class="card card-login mx-auto mt-5">
-       {{ csrf_field() }}
-      <div class="card-header">Login {{ config('app.name') }}</div>
-      <div class="card-body">
-     
-        <form class="form-signin" method="POST" action="{{ route('login') }}">
-        {{ csrf_field() }}
-        <div class="form-group">
-               <input type="text" id="role_id" name="role_id" value="1" hidden>
-          <div class="label-group">
-               <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus>
-                <label for="inputEmail" class="sr-only">Email address</label>
-
-          </div>
+        <div class="controls">
+            <div class="main_input_box">
+                <span class="add-on bg_lo"><i class="icon-envelope"></i></span><input type="text" placeholder="E-mail address" />
+            </div>
         </div>
 
-        <div class="form-group">
-          <div class="label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required autofocus>   
-              <label for="inputPassword" class="sr-only">Password</label>
-             <div class="checkbox mb-3">
+        <div class="form-actions">
+            <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login">&laquo; Back to login</a></span>
+            <span class="pull-right"><a class="btn btn-info">Recover</a></span>
         </div>
-      </div>
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-        </form>
-        <div class="text-center">
-          <a class="d-block small mt-3" href="{{url('register')}}">Register an Account</a>
-          <a class="d-block small" href="{{url('forgot-password')}}">Forgot Password?</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    </form>
+</div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
+<script src="{{asset('js/jquery.min.js')}}"></script>
+<script src="{{asset('js/matrix.login.js')}}"></script>
 </body>
 
 </html>

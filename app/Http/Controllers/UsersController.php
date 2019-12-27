@@ -15,51 +15,31 @@ class UsersController extends Controller
     public function index(){
         return view('users.login_register');
     }
-     //login
-    public function getLogin() {
-        return view('/auth/login');
-    }
-
-    public function postLogin(Request $request) {
-        $admin = 1;
-        if (Auth::attempt(['admin' => $request->admin, 'email' => $request->email, 'password' => $request->password ])) {
-             return redirect()->route('admin');
-        } else if (Auth::attempt( [ 'email' => $request->email, 'password' => $request->password ])) {
-             return redirect()->route('home');
-        }
-
-        return redirect()->route('login');
-    }
-    // end login 
-
-
-    //regis
-    public function getRegister() {
-         return view('backEnd/auth/register');
-    }
-
-
-   public function postRegister(Request $request) {
-
-            $this->validate($request, [
-               'name' => 'required|min:4',
-               'email' =>  'required|email|unique:users',
-               'password' => 'required|min:6|confirmed' // field_confirmation
-            ]);
-
-          User::create([
-      
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
+    public function register(Request $request){
+        $this->validate($request,[
+           'name'=>'required|string|max:255',
+            'email'=>'required|string|email|unique:users,email',
+            'password'=>'required|min:6|confirmed',
         ]);
-
-        // return redirect()->back();
-        return redirect()->route('register');
-    } 
-    //end regis
-
-
+        $input_data=$request->all();
+        $input_data['password']=Hash::make($input_data['password']);
+        User::create($input_data);
+        return back()->with('message','Registered already!');
+    }
+    public function login(Request $request){
+        $input_data=$request->all();
+        if(Auth::attempt(['email'=>$input_data['email'],'password'=>$input_data['password']])){
+            Session::put('frontSession',$input_data['email']);
+            return redirect('/viewcart');
+        }else{
+            return back()->with('message','Account is not Valid!');
+        }
+    }
+    public function logout(){
+        Auth::logout();
+        Session::forget('frontSession');
+        return redirect('/');
+    }
     public function account(){
         $countries=DB::table('countries')->get();
         $user_login=User::where('id',Auth::id())->first();
