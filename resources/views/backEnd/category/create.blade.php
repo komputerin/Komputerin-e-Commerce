@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label">Category Lavel :</label>
+                            <label class="control-label">Category :</label>
                             <div class="controls" style="width: 245px;">
                                 <select name="parent_id" id="parent_id">
                                         @foreach($cate_levels as $key=>$value)

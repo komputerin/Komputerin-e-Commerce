@@ -3,10 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Product extends Model
+class ProductAtrr_model extends Model
 {
-    
-    protected $guarded = ['id'];
+    protected $table='product_att';
+    protected $primaryKey='id';
+    protected $fillable=['products_id','code','stock'];
 }
